@@ -1,0 +1,15 @@
+# netlify.toml
+# 这个文件用于告诉 Netlify 如何构建我们的 Vite 项目以及如何处理页面路由
+
+[build]
+  # 构建时需要执行的命令
+  command = "npm run build"
+  # 构建完成后，需要发布的文件夹（Vite 默认打包到 dist 目录）
+  publish = "dist"
+
+# 重定向规则配置
+[[redirects]]
+  # 将所有未找到的路径 (/*) 重定向回单页应用的入口文件 (index.html)
+  from = "/*"
+  to = "/index.html"
+  status = 200
